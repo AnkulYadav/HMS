@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2023 at 12:37 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Apr 30, 2024 at 04:03 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -51,9 +51,8 @@ INSERT INTO `appointments` (`id`, `name`, `email`, `phone`, `doctor`, `date`, `f
 (8, 'Shakil Shakil', 'shakil3300bd@gmail.com', '01784918947', 'Md Abu Sama', '2023-08-23', '500', 'iuhgashfas', 'Approved', '1', '1', '2023-08-21 15:39:11', '2023-08-21 19:23:16'),
 (9, 'MD Abdullah Al', 'shakil3300bd@gmail.com', '01517868256', 'Abu Shaleh', '2023-08-24', '700', 'ghfuidjfnf', 'Completed', '1', '2', '2023-08-21 15:39:56', '2023-08-21 16:53:09'),
 (12, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Md Abu Sama', '2023-08-25', '500', 'hgsdhjhsdjdg', 'Completed', '1', '1', '2023-08-21 15:59:29', '2023-08-21 16:46:57'),
-(13, 'MD SABBIR AHMED', 'shakil3300bd@gmail.com', '01517868256', 'Abu Shaleh', '2023-08-24', '700', 'Hello', 'Completed', '2', '2', '2023-08-21 19:23:45', '2023-08-21 19:24:16'),
-(14, 'MD ABDULLAH AL SHAKIL', 'shakil3300bd@gmail.com', '01716610045', 'Abu Shaleh', '2023-08-26', '700', 'Hello', 'Approved', '2', '2', '2023-08-24 13:36:39', '2023-08-24 13:37:23'),
-(15, 'Test', 'shakil3300bd@gmail.com', '01716610045', 'Abu Shaleh', '2023-08-26', '700', 'Hello', 'Completed', '2', '2', '2023-08-24 13:39:22', '2023-08-24 13:40:40');
+(13, 'MD SABBIR AHMED', 'shakil3300bd@gmail.com', '01517868256', 'Abu Shaleh', '2023-08-24', '700', 'Hello', 'Canceled', '2', '2', '2023-08-21 19:23:45', '2024-04-26 14:41:02'),
+(14, 'MD ABDULLAH AL SHAKIL', 'shakil3300bd@gmail.com', '01716610045', 'Abu Shaleh', '2023-08-26', '700', 'Hello', 'Approved', '2', '2', '2023-08-24 13:36:39', '2023-08-24 13:37:23');
 
 -- --------------------------------------------------------
 
@@ -82,17 +81,9 @@ CREATE TABLE `appointment_histories` (
 --
 
 INSERT INTO `appointment_histories` (`id`, `username`, `email`, `phone`, `user_id`, `doctor`, `doctor_id`, `fee`, `message`, `status`, `appointment_id`, `created_at`, `updated_at`) VALUES
-(1, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 1, 'Md Abu Sama', 1, '500', 'hgsdhjhsdjdg', 'Completed', 12, '2023-08-21 16:43:34', '2023-08-21 16:43:34'),
-(2, 'MD Abdullah Al', 'shakil3300bd@gmail.com', '01517868256', 1, 'Abu Shaleh', 2, '700', 'ghfuidjfnf', 'Cancelled By Doctor', 9, '2023-08-21 16:43:44', '2023-08-21 19:11:44'),
-(3, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 1, 'Md Abu Sama', 1, '500', 'hgsdhjhsdjdg', 'Completed', 12, '2023-08-21 16:45:02', '2023-08-21 16:45:02'),
-(4, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 1, 'Md Abu Sama', 1, '500', 'hgsdhjhsdjdg', 'Completed', 12, '2023-08-21 16:46:57', '2023-08-21 16:46:57'),
-(5, 'MD Abdullah Al', 'shakil3300bd@gmail.com', '01517868256', 1, 'Abu Shaleh', 2, '700', 'ghfuidjfnf', 'Cancelled By Doctor', 9, '2023-08-21 16:53:09', '2023-08-21 19:14:45'),
-(6, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 1, 'Md Abu Sama', 1, '500', 'hgsdhjhsdjdg', 'Completed', 12, '2023-08-21 17:21:03', '2023-08-21 17:21:03'),
-(7, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 1, 'Md Abu Sama', 1, '500', 'hgsdhjhsdjdg', 'Completed', 12, '2023-08-21 19:20:28', '2023-08-21 19:20:28'),
-(8, 'MD SABBIR AHMED', 'shakil3300bd@gmail.com', '01517868256', 2, 'Abu Shaleh', 2, '700', 'Hello', 'Cancelled By Doctor', 13, '2023-08-21 19:24:16', '2023-08-21 19:24:28'),
-(9, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 1, 'Md Abu Sama', 1, '500', 'hgsdhjhsdjdg', 'Completed', 12, '2023-08-21 19:26:18', '2023-08-21 19:26:18'),
-(10, 'MD SABBIR AHMED', 'shakil3300bd@gmail.com', '01517868256', 2, 'Abu Shaleh', 2, '700', 'Hello', 'Cancelled By Doctor', 13, '2023-08-21 19:26:21', '2023-08-21 19:26:28'),
-(11, 'Test', 'shakil3300bd@gmail.com', '01716610045', 2, 'Abu Shaleh', 2, '700', 'Hello', 'Completed', 15, '2023-08-24 13:40:40', '2023-08-24 13:40:40');
+(11, 'Test', 'ankulyadav9001@gmail.com', '9336879087', 2, 'Abu Shaleh', 2, '700', 'Hello', 'Completed', 15, '2023-08-24 13:40:40', '2023-08-24 13:40:40'),
+(12, 'Test', 'ankulyadav9001@gmail.com', '9336879087', 2, 'Abu Shaleh', 2, '700', 'Hello', 'Completed', 15, '2024-04-26 14:40:44', '2024-04-26 14:40:44'),
+(13, 'Test', 'ankulyadav9001@gmail.com', '9336879087', 2, 'Abu Shaleh', 2, '700', 'Hello', 'Completed', 15, '2024-04-26 14:40:54', '2024-04-26 14:40:54');
 
 -- --------------------------------------------------------
 
@@ -174,9 +165,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `name`, `email`, `subject`, `message`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(4, 'MD Abdullah Al', 'shakil3300bd@gmail.com', 'Test Complain', 'Test', 'Action Taken', '1', '2023-08-16 14:08:25', '2023-08-16 14:09:20'),
-(5, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', 'ttyerertertr', 'jfhdjicfidio jchsdicjds', 'Action Taken', '1', '2023-08-21 11:05:14', '2023-08-21 11:24:36'),
-(6, 'MD SABBIR AHMED', 'shakil3300bd@gmail.com', 'jljkl', 'rdfyu', 'Action Taken', '2', '2023-08-31 22:43:23', '2023-08-31 23:02:31');
+(7, 'Ankul Yadav', 'ankulyadav9001@gmail.com', 'TEST', 'test', 'In Progress', NULL, '2024-04-28 12:12:04', '2024-04-28 12:12:04');
 
 -- --------------------------------------------------------
 
@@ -204,8 +193,9 @@ CREATE TABLE `doctors` (
 --
 
 INSERT INTO `doctors` (`id`, `name`, `phone`, `speciality`, `room`, `time`, `day`, `fee`, `description`, `image`, `created_at`, `updated_at`) VALUES
-(1, 'Md Abu Sama', '01716610045', 'Heart', '212', '10:00 AM to 03:00PM', 'Friday, Sunday, Tuesday', '500', 'ihfdscjh d hfuiodhivjhdiovj fhdiosjhviuoafhv hfuiahfvuio hvuifdvhuiodvhiupfh', 'admin-assets/assets/doctor-image/1765700504.jpg', '2023-08-21 13:15:00', '2023-08-21 13:29:55'),
-(2, 'Abu Shaleh', '01517868256', NULL, '212', '10:00 AM to 03:00PM', 'Friday, Sunday, Tuesday', '700', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'admin-assets/assets/doctor-image/1045630145.jpg', '2023-08-21 13:17:47', '2023-08-21 13:33:00');
+(1, 'Dr. Adda Sharma', '01716610045', 'Heart', '212', '10:00 AM to 03:00PM', 'Friday, Sunday, Tuesday', '500', 'ihfdscjh d hfuiodhivjhdiovj fhdiosjhviuoafhv hfuiahfvuio hvuifdvhuiodvhiupfh', 'admin-assets/assets/doctor-image/545912530.jpg', '2023-08-21 13:15:00', '2024-04-26 14:40:23'),
+(2, 'Dr. Salman Khan', '7896541230', 'Heart', '1', '10:00 AM to 03:00PM', 'Friday, Sunday, Tuesday', '500', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 'admin-assets/assets/doctor-image/1045630145.jpg', '2023-08-21 13:17:47', '2024-04-26 14:25:19'),
+(3, 'Dr. Raju Devi', '9129757127', 'Skin', '1', '10:00', '9', '500', 'Dr. Raju Devi embodies the epitome of expertise and empathy in the realm of dermatology. With her years of specialized training and unwavering dedication to skincare, she stands as a beacon of hope for those seeking solutions to their dermatological concerns.', 'admin-assets/assets/doctor-image/580204021.jpg', '2024-04-26 13:01:27', '2024-04-26 13:01:27');
 
 -- --------------------------------------------------------
 
@@ -278,7 +268,7 @@ CREATE TABLE `labs` (
 --
 
 INSERT INTO `labs` (`id`, `name`, `code`, `price`, `room`, `description`, `created_at`, `updated_at`) VALUES
-(3, 'MD. Abdulllah Al Shakil', 'IZYGBO', '77', '12', 'cdfvfgbv', '2023-08-24 19:32:57', '2023-08-24 19:32:57');
+(3, 'Test ', 'IZYGBO', '77', '12', 'cdfvfgbv', '2023-08-24 19:32:57', '2023-08-24 19:32:57');
 
 -- --------------------------------------------------------
 
@@ -321,19 +311,6 @@ CREATE TABLE `lab_orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `lab_orders`
---
-
-INSERT INTO `lab_orders` (`id`, `name`, `email`, `phone`, `address`, `user_id`, `test_name`, `test_id`, `price`, `payment_status`, `delivery_status`, `created_at`, `updated_at`) VALUES
-(1, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'X-ray 01', '2', '1000', NULL, 'Cash On Delivery', '2023-08-24 19:20:11', '2023-08-24 19:20:11'),
-(2, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'X-ray 01', '2', '1000', NULL, 'Cash On Delivery', '2023-08-24 19:20:11', '2023-08-24 19:20:11'),
-(3, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'X-ray 01', '2', '1000', 'Paid', 'Delivered', '2023-08-24 19:22:22', '2023-08-24 20:05:09'),
-(6, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'MD. Abdulllah Al Shakil', '3', '77', 'Cash On Delivery', 'Cancelled', '2023-08-24 21:49:21', '2023-08-24 22:06:43'),
-(7, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'MD. Abdulllah Al Shakil', '3', '77', 'Paid', 'Delivered', '2023-09-04 02:35:57', '2023-09-04 02:38:52'),
-(8, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'MD. Abdulllah Al Shakil', '3', '77', 'Cash On Delivery', 'Processing', '2023-09-04 02:35:57', '2023-09-04 02:35:57'),
-(9, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '2', 'MD. Abdulllah Al Shakil', '3', '77', 'Cash On Delivery', 'Processing', '2023-09-04 02:35:57', '2023-09-04 02:35:57');
 
 -- --------------------------------------------------------
 
@@ -383,17 +360,6 @@ CREATE TABLE `medi_orders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `medi_orders`
---
-
-INSERT INTO `medi_orders` (`id`, `u_name`, `m_name`, `email`, `phone`, `user_id`, `m_id`, `price`, `quantity`, `vendor`, `date`, `payment_status`, `delivery_status`, `created_at`, `updated_at`) VALUES
-(1, 'MD. Abdulllah Al Shakil', 'shakil', 'shakil3300bd@gmail.com', '01517868256', '2', '4', '55', '1', 'fdf', '2023-08-26', 'Paid', 'Delivered', '2023-08-25 00:03:56', '2023-08-25 00:18:28'),
-(2, 'MD. Abdulllah Al Shakil', 'Napa', 'shakil3300bd@gmail.com', '01517868256', '2', '2', '6237', '1', 'Beximco', '2023-08-26', 'Cash On Delivery', 'Processing', '2023-08-25 00:03:56', '2023-08-25 00:03:56'),
-(3, 'MD. Abdulllah Al Shakil', 'fsdf', 'shakil3300bd@gmail.com', '01517868256', '2', '3', '35', '1', 'Beximco', '2023-08-26', 'Cash On Delivery', 'Processing', '2023-08-25 00:03:56', '2023-08-25 00:03:56'),
-(4, 'MD. Abdulllah Al Shakil', 'shakil', 'shakil3300bd@gmail.com', '01517868256', '2', '4', '55', '1', 'fdf', '2023-08-26', 'Paid', 'Delivered', '2023-08-31 22:49:01', '2023-08-31 23:05:35'),
-(5, 'MD. Abdulllah Al Shakil', 'fsdf', 'shakil3300bd@gmail.com', '01517868256', '2', '3', '35', '1', 'Beximco', '2023-08-26', 'Cash On Delivery', 'Processing', '2023-08-31 22:49:01', '2023-08-31 22:49:01');
 
 -- --------------------------------------------------------
 
@@ -477,8 +443,8 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `food_name`, `food_price`, `quantity`, `person_name`, `phone`, `room`, `status`, `user_id`, `created_at`, `updated_at`) VALUES
-(8, 'Item 01', '3500', '10', 'MD Abdullah Al Shakil', '01517868256', '406', NULL, '1', '2023-08-21 11:03:36', '2023-08-21 11:03:36'),
-(9, 'Item 04', '1500', '5', 'MD Abdullah Al Shakil', '01517868256', '512', NULL, '2', '2023-08-21 19:47:09', '2023-08-21 19:47:09'),
+(8, 'Item 01', '3500', '10', 'MD Abdullah Al Shakil', '01517868256', '406', 'cancelled', '1', '2023-08-21 11:03:36', '2024-04-26 14:42:05'),
+(9, 'Item 04', '1500', '5', 'MD Abdullah Al Shakil', '01517868256', '512', 'cancelled', '2', '2023-08-21 19:47:09', '2024-04-26 21:48:17'),
 (10, 'Item 05', '240', '2', 'Md Abu Sama', '01716610045', '512', NULL, '2', '2023-09-04 02:40:38', '2023-09-04 02:40:38'),
 (11, 'Item 01', '3500', '10', 'Md Abu Sama', '01716610045', '510', NULL, '2', '2023-09-04 03:20:01', '2023-09-04 03:20:01');
 
@@ -546,9 +512,7 @@ CREATE TABLE `pharmachies` (
 
 INSERT INTO `pharmachies` (`id`, `name`, `code`, `price`, `quantity`, `description`, `image`, `vendor`, `date`, `created_at`, `updated_at`) VALUES
 (2, 'Napa', 'dfhj', '6237', '8364', 'bdhfdifyuiy', 'admin-assets/assets/food/143428814.png', 'Beximco', '2023-08-26', '2023-08-24 15:04:49', '2023-08-24 15:04:49'),
-(3, 'fsdf', 'fdsf', '35', '223', 'sdgg', 'admin-assets/assets/food/145804914.pptx', 'Beximco', '2023-08-26', '2023-08-24 15:06:25', '2023-08-24 15:06:25'),
-(4, 'shakil', 'IZYGBO', '55', '324', 'hvdjvdivjhiopjvhkv iopejh', 'admin-assets/assets/food/1718406533.png', 'fdf', '2023-08-26', '2023-08-24 15:07:00', '2023-08-24 15:30:18'),
-(5, 'uyiu', '55', '57', '66', 'fc,b', 'admin-assets/assets/food/1240253178.pptx', 'jjk', '2023-09-08', '2023-08-31 23:49:37', '2023-08-31 23:49:37');
+(4, 'shakil', 'IZYGBO', '55', '324', 'hvdjvdivjhiopjvhkv iopejh', 'admin-assets/assets/food/1718406533.png', 'fdf', '2023-08-26', '2023-08-24 15:07:00', '2023-08-24 15:30:18');
 
 -- --------------------------------------------------------
 
@@ -607,10 +571,10 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('AgKWLQNlvZwKTOebabJIM2WsniDcEWaKSmfjArWD', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoieERrUWJxTllzb2hYTnVMbmFrSk81WWFqak5zVng0MU9yU0VDWkNLMCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9ob3NpdGFsL3B1YmxpYyI7fX0=', 1693820031),
-('MOmMaNDZPVUqIVXnFENRWjoIa5ySWk8FH4pYzpT0', 2, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36 Edg/116.0.1938.69', 'YTo0OntzOjY6Il90b2tlbiI7czo0MDoiU2p0STNsNmtGTlNDQUVldEY2Smd0ME9YYXc2VjhKUVBHd25UYVgyNiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NDQ6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9ob3NpdGFsL3B1YmxpYy9teW9yZGVyIjt9czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo1MDoibG9naW5fd2ViXzU5YmEzNmFkZGMyYjJmOTQwMTU4MGYwMTRjN2Y1OGVhNGUzMDk4OWQiO2k6Mjt9', 1693819301),
-('SoMF1qV1YOf8beBUJKZjLLPZkQAIaKtE99mWokw4', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiZVF6R3hiZW9CczlaMGllbnY2NkhhVFBhUFNJcjBBcUxUM1owVEQxciI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6NTI6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9ob3NpdGFsL3B1YmxpYy9mb3Jnb3QtcGFzc3dvcmQiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX19', 1693999945),
-('UgKo4il9aNsp0BkYO44y0elIPxdZjEXNeJLQ4vc4', NULL, '::1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiWDhtVGY1ZjhXZ1dhZHFobEcxTWRZQlBKV21NaVVvZXREOWthYkZKbiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzY6Imh0dHA6Ly9sb2NhbGhvc3Q6ODA4MC9ob3NpdGFsL3B1YmxpYyI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1694103778);
+('AkBv42L61VUFvPp3M74IkRfjp9piLF8AWECKQpCp', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoid0tDNDV0VVhSRDh6Q3g2S1R6ZUxnaVBjV2VEcjNkWEF5VEVBVk04SyI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1714369069),
+('FvheO2E2yzmmHyzFQ4fyTfGF8l2wyNHrTarhV6gl', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSWg3UXdpNmpOZElTam53cDNiTmxUUE12azdEOHRsZnlneGt4OTFzTCI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1714327836),
+('qb1WDCK76P42EkkGXZkjXiyBgTFHUX0ghIJRCE1d', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoidTV0dVg3SWl3NnBuRmdhQ2lxdmswTXVHRGxJWlR4WmNmQ1JWVHRnayI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzA6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MC9yZWdpc3RlciI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1714369064),
+('ro3QbPwW5LmKdScG9nGseVm2uTqSuqImB5W2enwD', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiSjJwUlY5TEhWZkdWdkNJVGlQSmdURHVTUUE4YUlJUmJ1dzVnOFlpOCI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODA4MCI7fX0=', 1714327944);
 
 -- --------------------------------------------------------
 
@@ -640,15 +604,16 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone`, `address`, `usertype`, `email_verified_at`, `password`, `doctor_id`, `remember_token`, `current_team_id`, `profile_photo_path`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'shakil.180csebubt@gmail.com', '01784918947', 'Rupnagar R/A , Mirpur-02, Dhaka-1216', '1', '2023-08-21 17:53:37', '$2y$10$DyjqIM.Tk6mxVs7nR0kT9.yUWe5C1MSnJfbAUIqP3tUxGwMBDtxEe', NULL, NULL, NULL, NULL, '2023-08-21 17:52:29', '2023-08-21 17:53:37'),
-(2, 'MD. Abdulllah Al Shakil', 'shakil3300bd@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '0', '2023-08-21 18:01:45', '$2y$10$LeImXNH9FEi.oVQt8tjuvulog7luo4bCSeCpEdbzXHHn8WUAdnoRC', NULL, NULL, NULL, NULL, '2023-08-21 18:00:59', '2023-08-21 18:01:45'),
-(4, 'Md Abu Sama', 'shakil33003bd@gmail.com', '01716610045', 'Midandighi, Boda, Panchagarh', '3', NULL, '$2y$10$YcLoOsPImqcHHNCRUk.g7enVZJYw/8Z8tP82HbF4AqDBooqIfjBIK', '', NULL, NULL, NULL, '2023-08-21 18:26:55', '2023-08-21 18:26:55'),
-(5, 'Doctor-02', 'jowati1680@cwtaa.com', '12345678', 'uhhfdjiwhfuig', '2', '2023-08-21 18:45:26', '$2y$10$RRDWirT7VE3Q7mxlIe1VGO6tI4KpSA/v7uZanSiiUHA2RHeHcYY82', '2', NULL, NULL, NULL, '2023-08-21 18:29:12', '2023-08-21 18:45:26'),
-(6, 'Food Manager', 'vosoj31395@vikinoko.com', '01517868256', 'Mirpur-2, Dhaka', '3', '2023-08-24 16:43:10', '$2y$10$yL8ccJ2OdukxmBZgBruBJO.RGdLQVoFpHp8e/.gru2y0T3IwM2pSi', NULL, NULL, NULL, NULL, '2023-08-24 16:42:20', '2023-08-24 16:43:10'),
-(7, 'Reciptionist', 'sivale1060@stypedia.com', '01517868256', 'Rupnagar R/A , Mirpur-02, Dhaka-1216', '4', '2023-08-24 16:45:55', '$2y$10$62akuh7.JKrCoa3Q8Cn.uuMdZo1p/YnJguWP1nDARGU1XVv28PPbe', NULL, NULL, NULL, NULL, '2023-08-24 16:44:59', '2023-08-24 16:45:55'),
-(8, 'Lab & Medicine', 'sedepic766@stypedia.com', '01517868256', 'Mirpur-02', 'Lab and Medicines', '2023-08-24 16:49:43', '$2y$10$erwXG2UNe.IrF.FwE4/nQ.dqdDZg03em8sgj4sXJV8GQRpYQsjGXy', NULL, NULL, NULL, NULL, '2023-08-24 16:48:54', '2023-08-24 17:42:30'),
-(14, 'Lab & Medicine', 'mdanik0178@gmail.com', '09776555', 'strdtyfyyfd', '5', NULL, '$2y$10$fc6HXYvzuoKxmJwuYepnsenGuyGfQSuPS1LhSAo2pDrxyHl0PBHr2', NULL, NULL, NULL, NULL, '2023-08-31 22:56:51', '2023-08-31 22:56:51'),
-(15, 'MD. Abdulllah Al Shakil', 'shakilforuniversity@gmail.com', '01517868256', 'Mirpur-2, Dhaka', '5', '2023-09-04 02:38:11', '$2y$10$0fGHMa0/v8w0ncbKVceewuZgQSMrNYH0Xn2MVbPFS5TPgV/6pDZ3u', NULL, NULL, NULL, NULL, '2023-08-31 22:58:45', '2023-09-04 02:38:11');
+(1, 'Admin', 'admin@gmail.com', '9632587410', 'Lucknow', '1', '2023-08-21 17:53:37', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2023-08-21 17:52:29', '2024-04-26 14:19:54'),
+(2, 'user', 'user@gmail.com', '7896541230', 'UP', '0', '2023-08-21 18:01:45', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2023-08-21 18:00:59', '2023-08-21 18:01:45'),
+(4, 'Food', 'food1@gmail.com', '7896541230', 'asdfasd', '3', NULL, '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', '', NULL, NULL, NULL, '2023-08-21 18:26:55', '2023-08-21 18:26:55'),
+(5, 'Doctor-02', 'doctor@gmail.com', '12345678', 'uhhfdjiwhfuig', '2', '2023-08-21 18:45:26', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', '2', NULL, NULL, NULL, '2023-08-21 18:29:12', '2023-08-21 18:45:26'),
+(6, 'Diet Manager', 'diet@gmail.com', '7412589630', 'lucknow', '3', '2023-08-24 16:43:10', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2023-08-24 16:42:20', '2024-04-26 14:20:28'),
+(7, 'Reciptionist', 'reciptionist@gmail.com', '01517868256', 'asdfqwe', '4', '2023-08-24 16:45:55', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2023-08-24 16:44:59', '2023-08-24 16:45:55'),
+(8, 'Rakesh', 'rakesh@gmail.coim', '01517868256', 'Punjab', '4', '2023-08-24 16:49:43', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2023-08-24 16:48:54', '2024-04-26 14:14:33'),
+(15, 'Rahul Rana', 'labtest@gmail.com', '9874563210', 'Lucknow', '5', '2023-09-04 02:38:11', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2023-08-31 22:58:45', '2024-04-26 14:13:11'),
+(19, 'Ankul Yadav', 'ankulyadav9001@gmail.com', '9336879087', 'Gindan Khera, Amausi , Sarojini Nagar ,Lucknow', '1', '2024-04-26 12:00:00', '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2024-04-26 11:59:12', '2024-04-26 12:00:00'),
+(20, 'Dr. Pinki Guard', 'pinki@gmail.com', '9336879087', 'Lucknow', '5', NULL, '$2y$10$Ws0tQ6x1YkRm/4f5HxQHE.IqBo7CPysmSM.GXxe6bHWmw36t9RRam', NULL, NULL, NULL, NULL, '2024-04-26 14:01:14', '2024-04-26 14:12:57');
 
 --
 -- Indexes for dumped tables
@@ -807,7 +772,7 @@ ALTER TABLE `appointments`
 -- AUTO_INCREMENT for table `appointment_histories`
 --
 ALTER TABLE `appointment_histories`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `blogs`
@@ -825,13 +790,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `doctors`
 --
 ALTER TABLE `doctors`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -909,7 +874,7 @@ ALTER TABLE `pres`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
